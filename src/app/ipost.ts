@@ -16,7 +16,7 @@ title:string;
     date: string;
     readTime: string;
     featured: boolean;
-    // tags: string[];
+    tags: string[];
 }
 export interface ICategory {
     name: string;

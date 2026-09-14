@@ -2,6 +2,7 @@
 :root{
      --color-orange-200:#f973164d;
     --color-orange-300-rgb:249, 115, 22;
+    --color-orange-500-rgb:  253, 186, 116;;
     --color-orange-400:#fb923c;
     --color-orange-600:#ea580c;
     --color-orange-500:#f97316;
@@ -10,7 +11,7 @@
     --color-neutral-800:#262626;
     --color-black-500:#0a0a0a;
     --color-black-400:#161616;
-       
+
     --text-xl:1.25rem;
     --text-2xl:1.50rem;
     --text-6xl: 3.75rem;

@@ -1,6 +1,6 @@
 .hero-section {
     background-color: #0a0a0a;
-    background-image: 
+    background-image:
         linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
         linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
     background-size: 80px 80px;
@@ -32,7 +32,7 @@
     0% , 100%{
         transform: scale(0.7);
         opacity: 1;
-    } 
+    }
     50%{
         transform: scale(1);
         opacity: 1;
@@ -51,9 +51,9 @@
 @keyframes pluse-fade{
       0% , 100%{
         opacity: 1;
-    } 
+    }
     50%{
-        
+
         opacity: 0.4;
     }
 }
@@ -90,5 +90,13 @@ h1{
 }
 /* //////////////////////// */
 .spieacl{
-    height: 100vh;
+    min-height: 100vh;
+}
+.avatar {
+  width: 3rem;
+  height: 3rem;
+  object-fit: cover;
+}
+.category{
+  background-color: rgba(var(--color-orange-300-rgb), 0.15);
 }
