@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { ICard } from '../icard';
 import { IPost } from '../ipost';
+import {IBox} from '../ibox';
 
 @Component({
   selector: 'app-home-component',
@@ -10,6 +11,14 @@ import { IPost } from '../ipost';
   styleUrl: './home-component.css',
 })
 export class HomeComponent {
+  boxs:IBox[]=[
+    {id:'0' ,icon:'fa-solid fa-gear' , h2:'اضاءة' ,p:'مقالة  3'},
+    {id:'1' ,icon:'fa-solid fa-user' , h2:'بورتريه' ,p:'مقالة  3'},
+    {id:'2' ,icon:' fa-solid fa-mountain-sun' , h2:'تقنيات' ,p:'مقالة  2'},
+    {id:'3' ,icon:' fa-solid fa-sliders' , h2:'مناظر طبيعية' ,p:'مقالة  5'},
+    {id:'4' ,icon:' fa-solid fa-gear' , h2:'معدات' ,p:'مقالة  3'},
+
+  ]
   cards:ICard[]=[
     {id:'0' ,icon:'fa-solid fa-newspaper' , h2:'+50' ,p:'مقالة'},
     {id:'1' ,icon:'fa-solid fa-users' , h2:'+10ألف' ,p:'قارئ'},

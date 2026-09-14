@@ -22,6 +22,9 @@
 .background-oragne{
         background: linear-gradient(135deg, rgb(249, 115, 22), rgb(234, 88, 12));
 }
+.background-oragne-400{
+  background-color: var(--color-orange-300-rgb);
+}
 .background-black{
     background-color: var(--color-black-500);
 }
@@ -34,6 +37,9 @@
 }
 .text-orange-500{
     color: var(--color-orange-500);
+}
+.text-orange-600{
+    color: var(--color-orange-600);
 }
 .text-sm{
     font-size: var(--text-sm);
