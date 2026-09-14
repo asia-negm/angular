@@ -47,6 +47,7 @@
     background-color:coral;
     opacity: 1;
     animation: pluse-grow var(--bs-spinner-animation-speed) ease-in-out infinite;
+    -webkit-animation: pluse-grow var(--bs-spinner-animation-speed) ease-in-out infinite;
 }
 @keyframes pluse-fade{
       0% , 100%{
@@ -62,6 +63,7 @@
     --bs-spinner-height: .275rem;
     --bs-spinner-animation-speed:1.75s;
     animation: pluse-fade var(--bs-spinner-animation-speed) ease-in-out infinite;
+    -webkit-animation: pluse-fade var(--bs-spinner-animation-speed) ease-in-out infinite;
 }
 .badge {
     background-color: rgba(var(--color-orange-300-rgb), 0.2);
@@ -96,6 +98,11 @@ h1{
 .avatar {
   width: 3rem;
   height: 3rem;
+  object-fit: cover;
+}
+.avatar-2 {
+  width: 2rem;
+  height: 2rem;
   object-fit: cover;
 }
 .category{
