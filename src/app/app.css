@@ -1,0 +1,6 @@
+:root{
+    --color-orange-400:#fb923c;
+}
+.background-oragne{
+        background: linear-gradient(135deg, rgb(249, 115, 22), rgb(234, 88, 12));
+}
