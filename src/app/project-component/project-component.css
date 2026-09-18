@@ -1,0 +1,16 @@
+.form-control {
+    padding: .375rem 2rem;
+    line-height: 2;
+    color: var(--color-neutral-200);
+    background-color: var(--color-black-400);
+    border: var(--bs-border-width) solid var(--color-black-400);
+
+}
+.form-control:focus{
+  border-color:var(--color-orange-400);
+  box-shadow:rgba(249 , 115 , 22, 0.1) 0px 0px 0px 3px;
+  color:white;
+}
+.border {
+    border: var(--bs-border-width) var(--bs-border-style) var(--color-neutral-800) !important;
+}
