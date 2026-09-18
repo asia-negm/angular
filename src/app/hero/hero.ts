@@ -10,13 +10,12 @@ import { RouterLink } from '@angular/router';
   styleUrl: './hero.css',
 })
 export class Hero {
-  badgeText = input('مرحباً بك في عدسة');
+  badgeText =input( 'مرحباً بك في عدسة');
   title =input('اكتشف');
-  titleHightLight =input('فن');
+  titleHighlight =input('فن');
   titleRest =input('التصوير الفوتوغرافي');
   description =input('انغمس في أسرار المحترفين ونصائح عملية لتطوير مهاراتك في التصوير.');
-  primaryBtn =input('اكتشف المقالات');
-  secondaryBtn =input('اعرف المزيد');
+  showBtn =input(true);
   showCards =input(true);
 
     cards:ICard[]=[

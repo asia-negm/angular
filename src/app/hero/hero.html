@@ -5,19 +5,22 @@
     </div>
           <div class="spinner-grow  text-orange-400" role="status">
     </div>
-          {{badgeText}}</span></h5>
-      <h1 class="text-6xl text-white mb-6">   {{title}} <span class="gradient-text">{{titleHightLight}} </span>
-    {{titleRest}}</h1>
-      <p class="text-netual-400 text-xl">{{description}}</p>
-      <div class="d-flex gap-3">
-        <button class="background-oragne discover text-white p-3 rounded border-0 rounded-5">{{primaryBtn}}
-          <i class="fa-solid fa-arrow-left"></i>
-        </button>
-        <button class="see-more p-3">
-       <i class="fa-solid fa-circle-info"></i>
-      {{secondaryBtn}}
-        </button>
-      </div>
+          {{badgeText ()}}</span></h5>
+      <h1 class="text-6xl text-white mb-6">   {{title()}} <span class="gradient-text">{{  titleHighlight ()}} </span>
+    {{titleRest()}}</h1>
+      <p class="text-netual-400 text-xl">{{description()}}</p>
+      @if(showBtn()){
+        <div class="d-flex gap-3">
+          <button class="background-oragne discover text-white p-3 rounded border-0 rounded-5">اكتشف المقالات
+            <i class="fa-solid fa-arrow-left"></i>
+          </button>
+          <button class="see-more p-3">
+         <i class="fa-solid fa-circle-info"></i>
+        اعرف المزيد
+          </button>
+        </div>
+
+      }
       @if(showCards()){
         <div>
           <div class="d-flex gap-3 p-4">
