@@ -4,10 +4,11 @@ import { ICard } from '../icard';
 import { IPost } from '../ipost';
 import {IBox} from '../ibox';
 import { ICap } from '../icap';
+import { Hero } from '../hero/hero';
 
 @Component({
   selector: 'app-home-component',
-  imports: [RouterLink],
+  imports: [RouterLink, Hero],
   templateUrl: './home-component.html',
   styleUrl: './home-component.css',
 })

@@ -1,0 +1,39 @@
+   <section class="hero-section d-flex align-items-center justify-content-center ">
+      <div class="hero-content d-flex flex-column  gap-1 text-center align-items-center justify-content-center ">
+        <h5><span class="badge rounded rounded-5 p-3  d-flex align-items-center gap-1">
+          <div class="spinner-grow timer text-orange-400" role="status">
+    </div>
+          <div class="spinner-grow  text-orange-400" role="status">
+    </div>
+          مرحباً بك في عدسة</span></h5>
+      <h1 class="text-6xl text-white mb-6">   اكتشف <span class="gradient-text">فن </span>
+      التصوير الفوتوغرافي</h1>
+      <p class="text-netual-400 text-xl">انغمس في أسرار المحترفين ونصائح عملية لتطوير مهاراتك في التصوير.</p>
+      <div class="d-flex gap-3">
+        <button class="background-oragne discover text-white p-3 rounded border-0 rounded-5">استكشف المقالات
+          <i class="fa-solid fa-arrow-left"></i>
+        </button>
+        <button class="see-more p-3">
+       <i class="fa-solid fa-circle-info"></i>
+      اعرف المزيد
+        </button>
+      </div>
+        <div>
+          <div class="d-flex gap-3 p-4">
+            @for(card of cards ; track card.id){
+
+              <div class="card rounded rounded-5" >
+          <div class="card-body text-center">
+            <i class="text-orange-500 {{card.icon}} text-2xl"></i>
+            <h2 class="fw-bold gradient-text text-2xl">{{card.h2}}</h2>
+            <p class="text-netual-500 text-sm">{{card.p}}</p>
+          </div>
+        </div>
+            }
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+<ng-content/>
