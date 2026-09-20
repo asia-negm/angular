@@ -104,5 +104,28 @@
 
     }
     }
+    <div class="d-flex justify-content-center align-items-center gap-2 mt-4">
+      <button class="btn btn-dark rounded-3"
+      [disabled]="currentPage() === 1"
+      (click)="goToPage(currentPage() - 1)" >
+      <i class="fa-solid fa-chevron-right"> </i>
+      </button>
+
+      @for (page of pageNumber() ; track page){
+        <button class="btn  rounded-3"
+        [class.background-oragne]="page === currentPage()"
+        [class.btn-dark]="page !!== currentPage()"
+        (click)="goToPage(page)" >
+        {{page}}
+        </button>
+
+      }
+
+      <button class="btn btn-dark rounded-3"
+      [disabled]="currentPage() === totralPage()"
+      (click)="goToPage(currentPage() + 1)" >
+      <i class="fa-solid fa-chevron-left"> </i>
+      </button>
+    </div>
   </div>
 </div>
