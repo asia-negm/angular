@@ -531,5 +531,8 @@ export class ProjectComponent {
   goToPage(page: number){
     this.currentPage.set(page)
   }
+  pageNumber = computed(()=>{
+    return Array.from({ length: this.totralPage() }, (_,i) => i + 1);
+  });
 
 }
