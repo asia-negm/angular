@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component , signal } from '@angular/core';
 import { Hero } from '../hero/hero';
 import { IPost } from '../ipost';
 
@@ -9,6 +9,10 @@ import { IPost } from '../ipost';
   styleUrl: './project-component.css',
 })
 export class ProjectComponent {
+  viewMode = signal<'grid' | 'list'>('grid');
+  toggleView(mode:'grid' | 'list'){
+    this.viewMode.set(mode);
+  }
    posts: IPost[] = [
     {
         "id": 1,
