@@ -20,7 +20,9 @@
     --text-xs:.75rem;
     --text-sm:0.875rem;
 }
-
+.mh-100vh {
+  max-height: 100vh;
+}
 .background-oragne{
         background: linear-gradient(135deg, rgb(249, 115, 22), rgb(234, 88, 12));
 }

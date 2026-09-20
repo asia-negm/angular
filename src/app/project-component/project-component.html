@@ -41,27 +41,27 @@
     </div>
   </nav>
   <div class="container p-5">
-    <div class="d-flex justify-content-between  align-items-center  py-3">
+    <div class="d-flex justify-content-between  align-items-center  py-3 ">
             <h6 class="text-white">عرض 28 مقالات</h6>
       <div class="d-flex align-content-center bg-black-400 rounded-4 p-1 bg-button-color">
-        <button [class.btn-primary]="viewMode() === 'list'" 
+        <button [class.btn-primary]="viewMode() === 'list'"
         [class.btn-outline-secondary]="viewMode() !== 'list'"
         (click)="toggleView('list')"
          class="button-style p-2 bg-black-400 text-netual-400 rounded-2 border-0"><i class="fa-solid fa-grip"></i></button>
-        <button [class.btn-primary]="viewMode() === 'grid'" 
+        <button [class.btn-primary]="viewMode() === 'grid'"
         [class.btn-outline-secondary]="viewMode() !== 'grid'"
         (click)="toggleView('grid')"
          class="button-style p-2 bg-black-400 text-netual-400 rounded-2 border-0"><i class="fa-solid fa-grip-lines"></i></button>
       </div>
     </div>
-    @if(viewMode() === 'grid'){
-      <div class="row"
-      [class.row-cols-1]="viewMode() === 'list'"
-      [class.row-cols-md-3]="viewMode() === 'grid'"
-      > @for(post of posts ;track post.id){
-        <div class="col">
-  
-          <div class="card">
+    @if(viewMode() === 'list'){
+      <div class="row g-3"
+      [class.row-cols-1]="viewMode() === 'grid'"
+      [class.row-cols-md-3]="viewMode() === 'list'"
+      > @for(post of pagePost() ;track post.id){
+        <div class="col-md-4 col-sm-6">
+
+          <div class="card h-100">
             <img [src]="post.image" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">{{post.title}}</h5>
@@ -70,13 +70,13 @@
           </div>
         </div>
       }
-  
+
       </div>
     }@else {
-         @for(post of posts ; track post.id){
-      <div class="card mb-3">
-    <div class="row g-0 rounded ">
-      <div class="col-md-6">
+         @for(post of pagePost() ; track post.id){
+      <div class="card mb-2">
+    <div class="row g-2 rounded ">
+      <div class="col-md-4">
         <img [src]="post.image" class="img-fluid rounded-start" alt="...">
       </div>
       <div class="col-md-6">
