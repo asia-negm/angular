@@ -18,24 +18,19 @@
     <div class="container-fluid">
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto gap-2 mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active text-sm py-2 px-4 border  rounded-4 bg-black-400 text-white" aria-current="page">جميع المقالات</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-sm py-2 px-4 border  rounded-4 bg-black-400  text-white">اضاءة</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-sm py-2 px-4 border border-1 rounded-4 bg-black-400  text-white">بورتريه</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-sm py-2 px-4 border  rounded-4 bg-black-400  text-white">مناظر طبيعية</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link  text-sm py-2 px-4 border  rounded-4 bg-black-400 text-white">تقنيات</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-sm py-2 px-4 border rounded-4 bg-black-400 text-white">معدات</a>
-          </li>
+          @for (cat of categories ; track $index){
+            <li class="nav-item">
+
+              <a 
+              [class.bg-black-400]="selectedCategory() !== cat"
+  [class.background-oragne]="selectedCategory() === cat"
+  [class.active]="selectedCategory() === cat"
+  (click)="selectCategory(cat)"
+  class="nav-link text-sm py-2 px-4 border rounded-4 text-white"
+  style="cursor: pointer;"
+  aria-current="page">{{cat}}</a>
+            </li>
+          }
         </ul>
       </div>
     </div>
@@ -58,7 +53,7 @@
       <div class="row g-3"
       [class.row-cols-1]="viewMode() === 'grid'"
       [class.row-cols-md-3]="viewMode() === 'list'"
-      > @for(post of pagePost() ;track post.id){
+      > @for(post of pagedPosts() ;track post.id){
         <div class="col-md-4 col-sm-6">
 
           <div class="card h-100">
@@ -73,7 +68,7 @@
 
       </div>
     }@else {
-         @for(post of pagePost() ; track post.id){
+         @for(post of pagedPosts() ; track post.id){
       <div class="card mb-2">
     <div class="row g-2 rounded ">
       <div class="col-md-4">

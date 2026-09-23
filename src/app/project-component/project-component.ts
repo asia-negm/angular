@@ -1,7 +1,6 @@
 import { Component , computed, signal } from '@angular/core';
 import { Hero } from '../hero/hero';
 import { IPost } from '../ipost';
-import { single } from 'rxjs';
 
 @Component({
   selector: 'app-project-component',
@@ -535,14 +534,30 @@ export class ProjectComponent {
   pageNumber = computed(()=>{
     return Array.from({ length: this.totralPage() }, (_,i) => i + 1);
   });
-selectedCategory = single<string>('جميع المقالات');
-categories = ['جميع المقالات ', "اضاءة " , "بورتريه" , " مناظر طبيعية ", " تقنيات ", "معدات"];
 
+
+
+selectedCategory = signal<string>('جميع المقالات');
+categories = ['جميع المقالات ', "إضاءة" , "بورتريه" , " مناظر طبيعية ", " تقنيات ", "معدات"];
 selectCategory(category: string){
   this.selectedCategory.set(category);
   this.currentPage.set(1);
 }
 
-filters
+filteredPost = computed( ()=>{
+  const selected = this.selectedCategory().trim();
+  if (selected === 'جميع المقالات'){
+    return this.posts;
+  }
+  return this.posts.filter(post => post.category.trim() === selected);
+
+});
+
+pagedPosts = computed(() => {
+  const start =(this.currentPage() - 1) *this.itemsPerPage;
+  return this.filteredPost().slice(start , start + this.itemsPerPage);
+})
+
+totalPages = computed (() =>Math.ceil (this.filteredPost().length/ this.itemsPerPage))
 
 }
