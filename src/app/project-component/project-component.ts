@@ -1,6 +1,7 @@
 import { Component , computed, signal } from '@angular/core';
 import { Hero } from '../hero/hero';
 import { IPost } from '../ipost';
+import { single } from 'rxjs';
 
 @Component({
   selector: 'app-project-component',
@@ -534,5 +535,14 @@ export class ProjectComponent {
   pageNumber = computed(()=>{
     return Array.from({ length: this.totralPage() }, (_,i) => i + 1);
   });
+selectedCategory = single<string>('جميع المقالات');
+categories = ['جميع المقالات ', "اضاءة " , "بورتريه" , " مناظر طبيعية ", " تقنيات ", "معدات"];
+
+selectCategory(category: string){
+  this.selectedCategory.set(category);
+  this.currentPage.set(1);
+}
+
+filters
 
 }
